@@ -27,6 +27,7 @@
 
         body{
             margin:0;
+            overflow-x:hidden;
             background:var(--paper);
             background-image:
                     radial-gradient(circle at 15% 8%, rgba(31,78,95,0.05), transparent 40%),
@@ -96,7 +97,7 @@
         .route-strip{
             position:relative;
             margin:2.6rem auto 0; max-width:560px;
-            display:flex; align-items:center; justify-content:center; gap:.6rem;
+            display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.6rem;
             font-family:'Fraunces', serif; font-weight:600; font-size:1rem;
             color:var(--paper);
         }
@@ -247,6 +248,19 @@
             .day-inner{ padding:1.6rem 1.3rem 1.8rem; margin-inline-start:2.6rem; }
             .journal{ padding:3rem .9rem 5rem; }
             .day-place{ font-size:1.4rem; }
+        }
+
+        @media (max-width:560px){
+            .hero{ padding:3.5rem 1rem 3rem; }
+            .hero-content{
+                display:block;
+                width:100%;
+                max-width:100%;
+                padding:1.8rem 1.3rem 2rem;
+            }
+            .hero-sub{ font-size:.98rem; line-height:1.8; }
+            .route-strip{ margin-top:2rem; gap:.4rem; font-size:.92rem; }
+            .route-strip .city{ padding:.3rem .7rem; }
         }
     </style>
 </head>
