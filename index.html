@@ -336,6 +336,23 @@
             color:var(--paper);
             border-color:var(--terracotta);
         }
+        @media (max-width:560px){
+            .top-nav{
+                gap:.3rem;
+                padding:.7rem .35rem;
+                justify-content:stretch;
+            }
+            .top-nav-tab{
+                flex:1 1 0;
+                min-width:0;
+                padding:.45rem .15rem;
+                font-size:clamp(.6rem, 3.1vw, .82rem);
+                border-width:1.5px;
+                border-radius:5px;
+                white-space:nowrap;
+                text-align:center;
+            }
+        }
         .main-panel{
             display:none;
         }
