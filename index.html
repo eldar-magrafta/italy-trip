@@ -547,6 +547,60 @@
             opacity:1;
         }
 
+        /* ---------- DOCS ---------- */
+        .doc-item{
+            background:var(--paper-deep);
+            border:1px solid var(--line);
+            border-radius:8px;
+            padding:1.2rem 1.5rem;
+            margin-bottom:1rem;
+        }
+        .doc-header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:1rem;
+        }
+        .doc-title{
+            font-family:'Frank Ruhl Libre', serif;
+            font-weight:700;
+            font-size:1.15rem;
+            color:var(--blue-deep);
+        }
+        .doc-toggle{
+            padding:.5rem 1.2rem;
+            background:var(--terracotta);
+            color:var(--paper);
+            border:none;
+            border-radius:6px;
+            font-family:'Rubik', sans-serif;
+            font-size:.9rem;
+            font-weight:600;
+            cursor:pointer;
+            transition:background .2s ease;
+            flex-shrink:0;
+        }
+        .doc-toggle:hover{
+            background:var(--terracotta-deep);
+        }
+        .doc-body{
+            max-height:0;
+            overflow:hidden;
+            opacity:0;
+            transition:max-height .35s ease, opacity .25s ease, margin-top .35s ease;
+        }
+        .doc-item.open .doc-body{
+            max-height:2000px;
+            opacity:1;
+            margin-top:1.2rem;
+        }
+        .doc-body img{
+            max-width:100%;
+            border-radius:6px;
+            border:1px solid var(--line);
+            display:block;
+        }
+
         @media (max-width:720px){
             .day-inner{ padding:1.6rem 1.3rem 1.8rem; margin-inline-start:2.6rem; }
             .journal{ padding:3rem .9rem 5rem; }
@@ -595,6 +649,7 @@
     <button class="top-nav-tab" data-panel="food">🍕 אוכל</button>
     <button class="top-nav-tab" data-panel="places">📍 מקומות</button>
     <button class="top-nav-tab" data-panel="notes">📝 הודעות</button>
+    <button class="top-nav-tab" data-panel="docs">📄 מסמכים</button>
 </nav>
 
 <!-- SCHEDULE PANEL -->
@@ -975,6 +1030,21 @@
 </section>
 </div><!-- END NOTES PANEL -->
 
+<!-- DOCS PANEL -->
+<div class="main-panel" data-panel="docs">
+<section class="extras-section">
+    <div class="doc-item">
+        <div class="doc-header">
+            <span class="doc-title">אישור הזמנה למסעדה</span>
+            <button class="doc-toggle" onclick="toggleDoc(this)">הצג</button>
+        </div>
+        <div class="doc-body">
+            <img src="docs/restaurant-cinfirmation.jpeg" alt="אישור הזמנה למסעדה">
+        </div>
+    </div>
+</section>
+</div><!-- END DOCS PANEL -->
+
 <footer>תודה רבה לאלדר על טיול נהדר, נתראה בהרפתקה הבאה</footer>
 
 <script>
@@ -1010,6 +1080,13 @@
 function toggleDay(header) {
     const day = header.closest('.day');
     day.classList.toggle('collapsed');
+}
+
+// Collapsible Documents
+function toggleDoc(btn) {
+    const item = btn.closest('.doc-item');
+    const isOpen = item.classList.toggle('open');
+    btn.textContent = isOpen ? 'הסתר' : 'הצג';
 }
 
 // Top Navigation Tabs (Schedule / Food / Places)
