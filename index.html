@@ -267,17 +267,47 @@
             text-align:center;
             margin-top:2rem;
         }
-        .countdown-text{
-            font-family:'Frank Ruhl Libre', serif; font-weight:500;
-            font-size:1.1rem; color:var(--lemon);
-            direction:rtl;
+        .countdown-grid{
+            display:flex;
+            justify-content:center;
+            gap:2rem;
+            direction:ltr;
         }
-        .countdown-text strong{
+        .countdown-unit{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+        .countdown-label{
+            font-family:'Rubik', sans-serif;
+            font-size:0.85rem;
+            color:var(--lemon);
+            margin-bottom:0.5rem;
+        }
+        .countdown-number{
+            font-family:'Frank Ruhl Libre', serif;
             font-weight:700;
+            font-size:3rem;
+            color:var(--paper);
+            line-height:1;
+        }
+        .countdown-separator{
+            font-family:'Frank Ruhl Libre', serif;
+            font-weight:700;
+            font-size:3rem;
+            color:var(--lemon);
+            line-height:1;
+            margin-top:1.5rem;
         }
         .countdown-done{
             font-family:'Fraunces', serif; font-style:italic;
             color:var(--lemon); font-size:1.1rem;
+        }
+        @media (max-width:560px){
+            .countdown-grid{ gap:1rem; }
+            .countdown-number{ font-size:2rem; }
+            .countdown-separator{ font-size:2rem; margin-top:1.35rem; }
+            .countdown-label{ font-size:0.75rem; }
         }
 
         /* ---------- WEATHER ---------- */
@@ -647,13 +677,9 @@
         <p class="hero-sub">שישה ימים בין הקולוסאום לחוף אמלפי — רומא הסואנת, המצוקים והלימונים של סורנטו, והרחובות הפועמים של נאפולי.</p>
         <div class="route-strip">
             <span class="city lat">Roma</span>
-            <span class="seg">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 17h16M4 17a2 2 0 002 2h12a2 2 0 002-2M6 17V9a2 2 0 012-2h8a2 2 0 012 2v8M9 21v-2M15 21v-2M6 12h12"/><circle cx="7.5" cy="19.5" r=".6" fill="currentColor"/><circle cx="16.5" cy="19.5" r=".6" fill="currentColor"/></svg>
-      </span>
+            <span class="seg">★</span>
             <span class="city lat">Sorrento</span>
-            <span class="seg">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13l2-5h6l2 5M3 13h14M3 13a2 2 0 002 2h10a2 2 0 002-2M7 8V5h3v3"/><circle cx="7" cy="16" r=".6" fill="currentColor"/><circle cx="15" cy="16" r=".6" fill="currentColor"/></svg>
-      </span>
+            <span class="seg">★</span>
             <span class="city lat">Napoli</span>
         </div>
         <div class="countdown" id="countdown"></div>
@@ -1067,28 +1093,52 @@
 <script>
 // Countdown Timer
 (function() {
-    const tripDate = new Date('2026-07-24T14:00:00');
+    const tripDate = new Date('2026-07-24T10:55:00');
     const countdownEl = document.getElementById('countdown');
-    
+
+    function pad(num) {
+        return String(num).padStart(2, '0');
+    }
+
     function updateCountdown() {
         const now = new Date();
         const diff = tripDate - now;
-        
+
         if (diff <= 0) {
             countdownEl.innerHTML = '<span class="countdown-done">!הטיול התחיל</span>';
             return;
         }
-        
+
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        
+
         countdownEl.innerHTML = `
-            <span class="countdown-text">עוד <strong>${days}</strong> ימים, <strong>${hours}</strong> שעות, <strong>${minutes}</strong> דקות ו-<strong>${seconds}</strong> שניות לאמלפי!</span>
+            <div class="countdown-grid">
+                <div class="countdown-unit">
+                    <div class="countdown-label">ימים</div>
+                    <div class="countdown-number">${pad(days)}</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-unit">
+                    <div class="countdown-label">שעות</div>
+                    <div class="countdown-number">${pad(hours)}</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-unit">
+                    <div class="countdown-label">דקות</div>
+                    <div class="countdown-number">${pad(minutes)}</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-unit">
+                    <div class="countdown-label">שניות</div>
+                    <div class="countdown-number">${pad(seconds)}</div>
+                </div>
+            </div>
         `;
     }
-    
+
     updateCountdown();
     setInterval(updateCountdown, 1000);
 })();
