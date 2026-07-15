@@ -478,6 +478,13 @@
         .extras-item:last-child{
             border-bottom:none;
         }
+        .extras-header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:1rem;
+            margin-bottom:.4rem;
+        }
         .extras-name{
             font-family:'Fraunces', serif;
             font-size:1.1rem;
@@ -485,6 +492,7 @@
             color:var(--blue-deep);
             direction:ltr;
             unicode-bidi:isolate;
+            flex:1;
         }
         .extras-name a{
             color:inherit;
@@ -493,6 +501,32 @@
         }
         .extras-name a:hover{
             color:var(--terracotta);
+        }
+        .extras-actions{
+            display:flex;
+            gap:.5rem;
+            flex-shrink:0;
+        }
+        .extras-btn{
+            width:36px;
+            height:36px;
+            border-radius:6px;
+            border:1px solid var(--line);
+            background:var(--paper);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            cursor:pointer;
+            transition:all .2s ease;
+            text-decoration:none;
+        }
+        .extras-btn:hover{
+            background:var(--lemon);
+            border-color:var(--lemon);
+        }
+        .extras-btn svg{
+            width:20px;
+            height:20px;
         }
         .extras-desc{
             margin-top:.4rem;
@@ -977,17 +1011,47 @@
         <p class="sub-intro">המלצות אוכל ברומא</p>
         
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Two+Sizes+Tiramisu+Rome+Italy" target="_blank" rel="noopener">Two Sizes</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Two+Sizes+Tiramisu+Rome+Italy" target="_blank" rel="noopener">Two Sizes</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Two%20Sizes%20Rome" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Two+Sizes+Tiramisu+Rome+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">טירמיסו אותנטי ב־5 טעמים, בשני גדלים — מהמקומות הכי טובים ברומא</div>
         </div>
-        
+
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Regoli+Pasticceria+Rome+Italy" target="_blank" rel="noopener">Regoli Pasticceria</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Regoli+Pasticceria+Rome+Italy" target="_blank" rel="noopener">Regoli Pasticceria</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Regoli%20Pasticceria%20Rome" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Regoli+Pasticceria+Rome+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">מריטוצו — הבריוש האיטלקי הממולא בקרם שמנת</div>
         </div>
-        
+
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Roma+Sparita+Rome+Italy" target="_blank" rel="noopener">Roma Sparita</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Roma+Sparita+Rome+Italy" target="_blank" rel="noopener">Roma Sparita</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Roma%20Sparita%20Rome" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Roma+Sparita+Rome+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">קאצ׳ו א פפה מוגש בתוך קערת פרמזן — חוויה</div>
         </div>
     </div>
@@ -1000,32 +1064,92 @@
         <p class="sub-intro">24 שעות בנאפולי, איטליה — וכל מה שאכלתי</p>
         
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Sfogliatelle+Attanasio+Naples+Italy" target="_blank" rel="noopener">Sfogliatelle Attanasio</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Sfogliatelle+Attanasio+Naples+Italy" target="_blank" rel="noopener">Sfogliatelle Attanasio</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Sfogliatelle%20Attanasio%20Naples" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Sfogliatelle+Attanasio+Naples+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">מתחילים במאפה אולי הכי טעים בעולם — הספוליאטלה, שהמציאו פה בנאפולי</div>
         </div>
-        
+
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Pizzeria+De+Figliole+Naples+Italy" target="_blank" rel="noopener">Pizzeria De' Figliole</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Pizzeria+De+Figliole+Naples+Italy" target="_blank" rel="noopener">Pizzeria De' Figliole</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Pizzeria%20De%20Figliole%20Naples" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Pizzeria+De+Figliole+Naples+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">הפיצה המטוגנת במקום הכי משפחתי וחמוד</div>
         </div>
-        
+
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=L'Antica+Pizzeria+da+Michele+Naples+Italy" target="_blank" rel="noopener">L'Antica Pizzeria da Michele</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=L'Antica+Pizzeria+da+Michele+Naples+Italy" target="_blank" rel="noopener">L'Antica Pizzeria da Michele</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Antica%20Pizzeria%20Michele%20Naples" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=L'Antica+Pizzeria+da+Michele+Naples+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">הפיצרייה שזכתה בין ה־50 הטובות בעולם. מצויינת</div>
         </div>
-        
+
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Sorbillo+Pizzeria+Naples+Italy" target="_blank" rel="noopener">Sorbillo</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Sorbillo+Pizzeria+Naples+Italy" target="_blank" rel="noopener">Sorbillo</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Sorbillo%20Naples" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Sorbillo+Pizzeria+Naples+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">אחלה אחלה פיצה</div>
         </div>
-        
+
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Chalet+Ciro+Naples+Italy" target="_blank" rel="noopener">Chalet Ciro</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Chalet+Ciro+Naples+Italy" target="_blank" rel="noopener">Chalet Ciro</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Chalet%20Ciro%20Naples" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Chalet+Ciro+Naples+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">הסוג של ספינג׳ הנפוליטני — וואו. וואו</div>
         </div>
-        
+
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Mennella+Il+Gelato+Naples+Italy" target="_blank" rel="noopener">Mennella Il Gelato</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Mennella+Il+Gelato+Naples+Italy" target="_blank" rel="noopener">Mennella Il Gelato</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Mennella%20Gelato%20Naples" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Mennella+Il+Gelato+Naples+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">לסיום היום חלום הזה: ג׳לטו איטלקי חלום</div>
         </div>
     </div>
@@ -1043,22 +1167,42 @@
     
     <div class="sub-content" data-city="places-roma">
         <p class="sub-intro">מקומות מומלצים ברומא</p>
-        
+
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Colosseum+Rome+Italy" target="_blank" rel="noopener">Colosseum</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Colosseum+Rome+Italy" target="_blank" rel="noopener">Colosseum</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Colosseum%20Rome" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Colosseum+Rome+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">הקולוסאום — חובה להזמין כרטיסים מראש</div>
         </div>
     </div>
-    
+
     <div class="sub-content" data-city="places-sorrento">
         <p class="sub-intro">מקומות מומלצים בסורנטו — בקרוב!</p>
     </div>
-    
+
     <div class="sub-content active" data-city="places-napoli">
         <p class="sub-intro">מקומות שחייבים לראות בנאפולי</p>
-        
+
         <div class="extras-item">
-            <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Maradona+graffiti+Naples+Italy" target="_blank" rel="noopener">Maradona graffiti</a></div>
+            <div class="extras-header">
+                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Maradona+graffiti+Naples+Italy" target="_blank" rel="noopener">Maradona graffiti</a></div>
+                <div class="extras-actions">
+                    <a href="https://www.tiktok.com/search?q=Maradona%20graffiti%20Naples" target="_blank" rel="noopener" class="extras-btn" title="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Maradona+graffiti+Naples+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </a>
+                </div>
+            </div>
             <div class="extras-desc">משוטטים ברובע הספרדי ובקיר של מראדונה</div>
         </div>
     </div>
