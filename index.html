@@ -210,8 +210,9 @@
             color:var(--paper); background:var(--cypress);
             border-radius:3px; padding:.05rem .5rem; font-size:.78rem; margin-inline-end:.4rem;
         }
-        .opts{ margin:.4rem 0 0; padding-inline-start:1.1rem; font-size:.88rem; color:#54483d; line-height:1.8; }
-        .opts li::marker{ color:var(--lemon); }
+        .opts{ margin:.4rem 0 0; padding-inline-start:1.1rem; font-size:.88rem; color:#54483d; line-height:1.8; list-style:none; }
+        .opts li{ margin:.3rem 0; }
+        .opts a.where{ display:inline; }
 
         .transit-note{
             display:flex; align-items:center; gap:.6rem;
@@ -829,7 +830,11 @@
                 <li class="item"><span class="dot"></span><div class="body">
                     <span class="what">ביץ׳ קלאב</span>
                     <p class="note">אופציות:</p>
-                    <ul class="opts"><li class="lat">MARMEO</li><li class="lat">Lido di Puolo</li><li class="lat">Bagni Salvatore</li></ul>
+                    <ul class="opts">
+                        <li><a class="where lat" href="https://www.google.com/maps/search/?api=1&query=MARMEO+Beach+Club+Sorrento+Italy" target="_blank" rel="noopener">MARMEO</a></li>
+                        <li><a class="where lat" href="https://www.google.com/maps/search/?api=1&query=Lido+di+Puolo+Sorrento+Italy" target="_blank" rel="noopener">Lido di Puolo</a></li>
+                        <li><a class="where lat" href="https://www.google.com/maps/search/?api=1&query=Bagni+Salvatore+Sorrento+Italy" target="_blank" rel="noopener">Bagni Salvatore</a></li>
+                    </ul>
                 </div></li>
                 <li class="item"><span class="dot"></span><div class="body">
                     <span class="what">השכרת סירה</span>
@@ -837,7 +842,10 @@
                 <li class="item"><span class="dot"></span><div class="body">
                     <span class="what">ארוחת ערב</span>
                     <p class="note">מסעדה פתוחה ליד המלון. אופציות:</p>
-                    <ul class="opts"><li class="lat">La Finestrella</li><li class="lat">Fuoro51</li></ul>
+                    <ul class="opts">
+                        <li><a class="where lat" href="https://www.google.com/maps/search/?api=1&query=La+Finestrella+Sorrento+Italy" target="_blank" rel="noopener">La Finestrella</a></li>
+                        <li><a class="where lat" href="https://www.google.com/maps/search/?api=1&query=Fuoro51+Sorrento+Italy" target="_blank" rel="noopener">Fuoro51</a></li>
+                    </ul>
                 </div></li>
             </ul>
             </div>
@@ -1082,7 +1090,7 @@
             <button class="doc-toggle" onclick="toggleDoc(this)">הצג</button>
         </div>
         <div class="doc-body">
-            <img src="docs/restaurant-cinfirmation.jpeg" alt="אישור הזמנה למסעדה">
+            <img src="docs/restaurant-confirmation.jpeg" alt="אישור הזמנה למסעדה">
         </div>
     </div>
 </section>
