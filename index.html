@@ -533,6 +533,19 @@
             color:var(--blue);
             font-style:italic;
         }
+        .note-delete{
+            float:left;
+            background:none;
+            border:none;
+            color:var(--terracotta);
+            cursor:pointer;
+            font-size:.85rem;
+            padding:0;
+            opacity:0.7;
+        }
+        .note-delete:hover{
+            opacity:1;
+        }
 
         @media (max-width:720px){
             .day-inner{ padding:1.6rem 1.3rem 1.8rem; margin-inline-start:2.6rem; }
@@ -1110,31 +1123,69 @@ document.querySelectorAll('.sub-tab').forEach(tab => {
         return `${day}.${month} ${hours}:${mins}`;
     }
     
+    // Get current user from localStorage
+    function getCurrentUser() {
+        return localStorage.getItem('italy-trip-user') || '';
+    }
+    
+    function setCurrentUser(name) {
+        localStorage.setItem('italy-trip-user', name);
+    }
+    
     // Render notes
     function renderNotes(notes) {
         if (!notes || notes.length === 0) {
             notesList.innerHTML = '<p class="notes-loading">אין הודעות עדיין. היו הראשונים!</p>';
             return;
         }
-        notesList.innerHTML = notes.map(note => `
+        const currentUser = getCurrentUser();
+        notesList.innerHTML = notes.map((note, idx) => `
             <div class="note-item">
+                ${note.author === currentUser ? `<button class="note-delete" data-idx="${idx}">✕</button>` : ''}
                 <div class="note-author">${note.author}</div>
                 <div class="note-message">${note.message}</div>
                 <div class="note-time">${formatDate(note.time)}</div>
             </div>
         `).join('');
+        
+        // Add delete handlers
+        notesList.querySelectorAll('.note-delete').forEach(btn => {
+            btn.addEventListener('click', () => deleteNote(parseInt(btn.dataset.idx)));
+        });
+    }
+    
+    // Delete note
+    async function deleteNote(idx) {
+        if (!confirm('למחוק את ההודעה?')) return;
+        
+        try {
+            const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+                headers: { 'X-Master-Key': JSONBIN_API_KEY }
+            });
+            if (res.ok) {
+                const data = await res.json();
+                let notes = data.record.notes || [];
+                notes.splice(idx, 1);
+                
+                await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': JSONBIN_API_KEY
+                    },
+                    body: JSON.stringify({ notes })
+                });
+                
+                renderNotes(notes);
+            }
+        } catch (e) {
+            console.log('Delete error:', e);
+            alert('שגיאה במחיקת ההודעה');
+        }
     }
     
     // Load notes from JSONbin
     async function loadNotes() {
-        // Check localStorage for bin ID
-        BIN_ID = localStorage.getItem('italy-trip-bin-id');
-        
-        if (!BIN_ID) {
-            notesList.innerHTML = '<p class="notes-loading">אין הודעות עדיין. היו הראשונים!</p>';
-            return;
-        }
-        
         try {
             const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
                 headers: { 'X-Master-Key': JSONBIN_API_KEY }
@@ -1156,46 +1207,26 @@ document.querySelectorAll('.sub-tab').forEach(tab => {
         try {
             let notes = [];
             
-            // Get existing notes if bin exists
-            if (BIN_ID) {
-                const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
-                    headers: { 'X-Master-Key': JSONBIN_API_KEY }
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    notes = data.record.notes || [];
-                }
+            // Get existing notes
+            const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+                headers: { 'X-Master-Key': JSONBIN_API_KEY }
+            });
+            if (res.ok) {
+                const data = await res.json();
+                notes = data.record.notes || [];
             }
             
             notes.unshift(newNote); // Add to beginning
             
-            // Create or update bin
-            if (!BIN_ID) {
-                const res = await fetch('https://api.jsonbin.io/v3/b', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Master-Key': JSONBIN_API_KEY,
-                        'X-Bin-Name': 'italy-trip-notes'
-                    },
-                    body: JSON.stringify({ notes })
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    BIN_ID = data.metadata.id;
-                    localStorage.setItem('italy-trip-bin-id', BIN_ID);
-                    console.log('Created bin:', BIN_ID);
-                }
-            } else {
-                await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Master-Key': JSONBIN_API_KEY
-                    },
-                    body: JSON.stringify({ notes })
-                });
-            }
+            // Update bin
+            await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Master-Key': JSONBIN_API_KEY
+                },
+                body: JSON.stringify({ notes })
+            });
             
             renderNotes(notes);
         } catch (e) {
@@ -1210,14 +1241,19 @@ document.querySelectorAll('.sub-tab').forEach(tab => {
         const author = form.author.value.trim();
         const message = form.message.value.trim();
         if (author && message) {
+            setCurrentUser(author); // Remember user for delete permissions
             form.querySelector('button').disabled = true;
             form.querySelector('button').textContent = 'שולח...';
             await saveNote(author, message);
-            form.reset();
+            form.message.value = ''; // Clear only message, keep author
             form.querySelector('button').disabled = false;
             form.querySelector('button').textContent = 'שלח';
         }
     });
+    
+    // Pre-fill author from localStorage
+    const savedUser = getCurrentUser();
+    if (savedUser) form.author.value = savedUser;
     
     // Load on init
     loadNotes();
