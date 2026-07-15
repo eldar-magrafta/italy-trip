@@ -1571,14 +1571,29 @@ document.addEventListener('click', function(e) {
     const webUrl = btn.href;
     const query = new URL(webUrl).searchParams.get('q');
 
-    // Try to open TikTok app first
-    const appUrl = `snssdk1128://search?keyword=${encodeURIComponent(query)}`;
-    window.location.href = appUrl;
+    // Try to open TikTok app using intent:// for Android or direct app URL for iOS
+    const isAndroid = /android/i.test(navigator.userAgent);
+    const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
 
-    // Fallback to web after short delay if app doesn't open
-    setTimeout(() => {
+    if (isIOS) {
+        // For iOS, try the app scheme and fall back quickly
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = `tiktok://search?q=${encodeURIComponent(query)}`;
+        document.body.appendChild(iframe);
+
+        setTimeout(() => {
+            document.body.removeChild(iframe);
+            // If still on page, app didn't open - go to web
+            window.open(webUrl, '_blank');
+        }, 500);
+    } else if (isAndroid) {
+        // Android intent
+        window.location.href = `intent://search?q=${encodeURIComponent(query)}#Intent;scheme=tiktok;package=com.zhiliaoapp.musically;end`;
+    } else {
+        // Desktop or unknown - just open web
         window.open(webUrl, '_blank');
-    }, 1500);
+    }
 });
 </script>
 
