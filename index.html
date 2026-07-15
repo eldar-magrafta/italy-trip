@@ -452,6 +452,88 @@
             line-height:1.6;
         }
 
+        /* ---------- SHARED NOTES ---------- */
+        .notes-section{
+            max-width:800px;
+            margin:2rem auto;
+            padding:0 1.5rem;
+        }
+        .notes-container{
+            background:var(--paper-deep);
+            border:1px solid var(--line);
+            border-radius:8px;
+            padding:1.5rem;
+        }
+        .notes-form{
+            display:flex;
+            gap:.5rem;
+            margin-bottom:1rem;
+            flex-wrap:wrap;
+        }
+        .notes-form input{
+            padding:.5rem .8rem;
+            border:1px solid var(--line);
+            border-radius:6px;
+            font-family:'Rubik', sans-serif;
+            font-size:.9rem;
+            background:var(--paper);
+        }
+        .notes-form input[name="author"]{
+            width:100px;
+        }
+        .notes-form input[name="message"]{
+            flex:1;
+            min-width:200px;
+        }
+        .notes-form button{
+            padding:.5rem 1rem;
+            background:var(--terracotta);
+            color:var(--paper);
+            border:none;
+            border-radius:6px;
+            font-family:'Rubik', sans-serif;
+            font-size:.9rem;
+            cursor:pointer;
+            transition:background .2s ease;
+        }
+        .notes-form button:hover{
+            background:var(--terracotta-deep);
+        }
+        .notes-list{
+            display:flex;
+            flex-direction:column;
+            gap:.8rem;
+        }
+        .note-item{
+            background:var(--lemon);
+            padding:.8rem 1rem;
+            border-radius:6px;
+            box-shadow:2px 2px 8px rgba(0,0,0,0.1);
+            transform:rotate(-0.5deg);
+        }
+        .note-item:nth-child(even){
+            transform:rotate(0.5deg);
+        }
+        .note-author{
+            font-weight:700;
+            color:var(--blue-deep);
+            font-size:.85rem;
+        }
+        .note-message{
+            margin-top:.3rem;
+            color:var(--ink);
+        }
+        .note-time{
+            font-size:.75rem;
+            color:var(--blue);
+            margin-top:.3rem;
+        }
+        .notes-loading{
+            text-align:center;
+            color:var(--blue);
+            font-style:italic;
+        }
+
         @media (max-width:720px){
             .day-inner{ padding:1.6rem 1.3rem 1.8rem; margin-inline-start:2.6rem; }
             .journal{ padding:3rem .9rem 5rem; }
@@ -499,6 +581,7 @@
     <button class="top-nav-tab active" data-panel="schedule">📅 לו"ז</button>
     <button class="top-nav-tab" data-panel="food">🍕 אוכל</button>
     <button class="top-nav-tab" data-panel="places">📍 מקומות</button>
+    <button class="top-nav-tab" data-panel="notes">📝 הודעות</button>
 </nav>
 
 <!-- SCHEDULE PANEL -->
@@ -858,6 +941,22 @@
 </section>
 </div><!-- END PLACES PANEL -->
 
+<!-- NOTES PANEL -->
+<div class="main-panel" data-panel="notes">
+<section class="notes-section">
+    <div class="notes-container">
+        <form class="notes-form" id="notesForm">
+            <input type="text" name="author" placeholder="שם" required>
+            <input type="text" name="message" placeholder="הודעה..." required>
+            <button type="submit">שלח</button>
+        </form>
+        <div class="notes-list" id="notesList">
+            <p class="notes-loading">טוען הודעות...</p>
+        </div>
+    </div>
+</section>
+</div><!-- END NOTES PANEL -->
+
 <footer>תודה רבה לאלדר על טיול נהדר, נתראה בהרפתקה הבאה</footer>
 
 <script>
@@ -989,6 +1088,139 @@ document.querySelectorAll('.sub-tab').forEach(tab => {
             `;
         }
     });
+})();
+
+// Shared Notes (JSONbin.io)
+(function() {
+    // TODO: Replace with your JSONbin.io API key from https://jsonbin.io/
+    const JSONBIN_API_KEY = '$2a$10$..XKN1.FgA1/FO3o86hcC.ZbddgA4mmMFep4L7KeJpgdL3HkxHk1u';
+    // Shared bin ID for all users
+    let BIN_ID = '6a575823da38895dfe603bd4';
+    
+    const form = document.getElementById('notesForm');
+    const notesList = document.getElementById('notesList');
+    
+    // Format date in Hebrew
+    function formatDate(dateStr) {
+        const date = new Date(dateStr);
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const hours = date.getHours().toString().padStart(2, '0');
+        const mins = date.getMinutes().toString().padStart(2, '0');
+        return `${day}.${month} ${hours}:${mins}`;
+    }
+    
+    // Render notes
+    function renderNotes(notes) {
+        if (!notes || notes.length === 0) {
+            notesList.innerHTML = '<p class="notes-loading">אין הודעות עדיין. היו הראשונים!</p>';
+            return;
+        }
+        notesList.innerHTML = notes.map(note => `
+            <div class="note-item">
+                <div class="note-author">${note.author}</div>
+                <div class="note-message">${note.message}</div>
+                <div class="note-time">${formatDate(note.time)}</div>
+            </div>
+        `).join('');
+    }
+    
+    // Load notes from JSONbin
+    async function loadNotes() {
+        // Check localStorage for bin ID
+        BIN_ID = localStorage.getItem('italy-trip-bin-id');
+        
+        if (!BIN_ID) {
+            notesList.innerHTML = '<p class="notes-loading">אין הודעות עדיין. היו הראשונים!</p>';
+            return;
+        }
+        
+        try {
+            const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+                headers: { 'X-Master-Key': JSONBIN_API_KEY }
+            });
+            if (res.ok) {
+                const data = await res.json();
+                renderNotes(data.record.notes || []);
+            }
+        } catch (e) {
+            console.log('Notes load error:', e);
+            notesList.innerHTML = '<p class="notes-loading">שגיאה בטעינת הודעות</p>';
+        }
+    }
+    
+    // Save note
+    async function saveNote(author, message) {
+        const newNote = { author, message, time: new Date().toISOString() };
+        
+        try {
+            let notes = [];
+            
+            // Get existing notes if bin exists
+            if (BIN_ID) {
+                const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+                    headers: { 'X-Master-Key': JSONBIN_API_KEY }
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    notes = data.record.notes || [];
+                }
+            }
+            
+            notes.unshift(newNote); // Add to beginning
+            
+            // Create or update bin
+            if (!BIN_ID) {
+                const res = await fetch('https://api.jsonbin.io/v3/b', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': JSONBIN_API_KEY,
+                        'X-Bin-Name': 'italy-trip-notes'
+                    },
+                    body: JSON.stringify({ notes })
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    BIN_ID = data.metadata.id;
+                    localStorage.setItem('italy-trip-bin-id', BIN_ID);
+                    console.log('Created bin:', BIN_ID);
+                }
+            } else {
+                await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': JSONBIN_API_KEY
+                    },
+                    body: JSON.stringify({ notes })
+                });
+            }
+            
+            renderNotes(notes);
+        } catch (e) {
+            console.log('Notes save error:', e);
+            alert('שגיאה בשמירת ההודעה');
+        }
+    }
+    
+    // Form submit
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const author = form.author.value.trim();
+        const message = form.message.value.trim();
+        if (author && message) {
+            form.querySelector('button').disabled = true;
+            form.querySelector('button').textContent = 'שולח...';
+            await saveNote(author, message);
+            form.reset();
+            form.querySelector('button').disabled = false;
+            form.querySelector('button').textContent = 'שלח';
+        }
+    });
+    
+    // Load on init
+    loadNotes();
 })();
 </script>
 
