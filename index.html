@@ -683,7 +683,8 @@
             opacity:0;
             transition:max-height .35s ease, opacity .25s ease, margin-top .35s ease;
         }
-        .doc-item.open .doc-body{
+        .doc-item.open .doc-body,
+        .doc-body-static{
             max-height:2000px;
             opacity:1;
             margin-top:1.2rem;
@@ -738,7 +739,7 @@
     <button class="top-nav-tab active" data-panel="schedule">📅 לו"ז</button>
     <button class="top-nav-tab" data-panel="food">🍕 אוכל</button>
     <button class="top-nav-tab" data-panel="places">📍 אתרים</button>
-    <button class="top-nav-tab" data-panel="docs">📄 מסמכים</button>
+    <button class="top-nav-tab" data-panel="docs">📄הזמנות</button>
     <button class="top-nav-tab" data-panel="notes">📝 הודעות</button>
 </nav>
 
@@ -1695,6 +1696,45 @@
 <!-- DOCS PANEL -->
 <div class="main-panel" data-panel="docs">
 <section class="extras-section">
+    <div class="doc-item">
+        <div class="doc-header">
+            <span class="doc-title">🏨 NYX Hotel Rome by Leonardo Hotels</span>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Cicerone+55+00193+Rome+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+            </a>
+        </div>
+        <div class="doc-body doc-body-static">
+            <p><strong>כתובת:</strong> Via Cicerone 55, Vaticano Prati, 00193 Rome, Italy</p>
+            <p><strong>צ'ק-אין:</strong> יום שישי 27.7, 15:00</p>
+            <p><strong>צ'ק-אאוט:</strong> יום שבת 25.7, 11:00</p>
+        </div>
+    </div>
+    <div class="doc-item">
+        <div class="doc-header">
+            <span class="doc-title">🏨 Grand Hotel Vesuvio, Sorrento</span>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Nastro+Verde+7+80067+Sorrento+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+            </a>
+        </div>
+        <div class="doc-body doc-body-static">
+            <p><strong>כתובת:</strong> Nastro Verde 7, 80067 Sorrento, Italy</p>
+            <p><strong>צ'ק-אין:</strong> יום שבת 25.7, 14:00</p>
+            <p><strong>צ'ק-אאוט:</strong> יום שלישי 28.7, 11:00</p>
+        </div>
+    </div>
+    <div class="doc-item">
+        <div class="doc-header">
+            <span class="doc-title">🏨 La Pinacoteca Aparthotel by NapoliApartments</span>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Corso+Vittorio+Emanuele+586+80132+Naples+Italy" target="_blank" rel="noopener" class="extras-btn" title="Navigate">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+            </a>
+        </div>
+        <div class="doc-body doc-body-static">
+            <p><strong>כתובת:</strong> Corso Vittorio Emanuele, 586, 80132 Naples, Italy</p>
+            <p><strong>צ'ק-אין:</strong> יום שלישי 28.7, 14:00</p>
+            <p><strong>צ'ק-אאוט:</strong> יום חמישי 30.7, 10:00</p>
+        </div>
+    </div>
     <div class="doc-item">
         <div class="doc-header">
             <span class="doc-title">אישור הזמנה למסעדה</span>
