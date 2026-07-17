@@ -505,14 +505,6 @@
             unicode-bidi:isolate;
             flex:1;
         }
-        .extras-name a{
-            color:inherit;
-            text-decoration:none;
-            border-bottom:1px dotted var(--terracotta);
-        }
-        .extras-name a:hover{
-            color:var(--terracotta);
-        }
         .extras-actions{
             display:flex;
             gap:.5rem;
@@ -521,6 +513,7 @@
         .extras-btn{
             width:36px;
             height:36px;
+            flex-shrink:0;
             border-radius:6px;
             border:1px solid var(--line);
             background:var(--paper);
@@ -1024,7 +1017,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Two+Sizes+Tiramisu+Rome+Italy" target="_blank" rel="noopener">Two Sizes</a></div>
+                <div class="extras-name">Two Sizes</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Two%20Sizes%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1042,7 +1035,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Regoli+Pasticceria+Rome+Italy" target="_blank" rel="noopener">Regoli Pasticceria</a></div>
+                <div class="extras-name">Regoli Pasticceria</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Regoli%20Pasticceria%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1060,7 +1053,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Roma+Sparita+Rome+Italy" target="_blank" rel="noopener">Roma Sparita</a></div>
+                <div class="extras-name">Roma Sparita</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Roma%20Sparita%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1078,7 +1071,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Suppli+Roma+Trastevere+Rome+Italy" target="_blank" rel="noopener">Supplì Roma</a></div>
+                <div class="extras-name">Supplì Roma</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Suppli%20Roma%20Trastevere" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1096,7 +1089,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Forno+Campo+de+Fiori+Rome+Italy" target="_blank" rel="noopener">Forno Campo de' Fiori</a></div>
+                <div class="extras-name">Forno Campo de' Fiori</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Forno%20Campo%20de%20Fiori%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1114,7 +1107,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Piccolo+Buco+Via+del+Lavatore+Rome+Italy" target="_blank" rel="noopener">Piccolo Buco</a></div>
+                <div class="extras-name">Piccolo Buco</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Piccolo%20Buco%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1132,7 +1125,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Giolitti+Gelato+Rome+Italy" target="_blank" rel="noopener">Giolitti</a></div>
+                <div class="extras-name">Giolitti</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Giolitti%20Gelato%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1154,7 +1147,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Ikura+Sushi+Sorrento+Italy" target="_blank" rel="noopener">IKURA SUSHI SORRENTO</a></div>
+                <div class="extras-name">IKURA SUSHI SORRENTO</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Ikura%20Sushi%20Sorrento" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1172,7 +1165,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Pizzeria+Da+Donna+Stella+Sorrento+Italy" target="_blank" rel="noopener">Da Donna Stella</a></div>
+                <div class="extras-name">Da Donna Stella</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Donna%20Stella%20Sorrento" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1190,7 +1183,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Gelateria+Primavera+Sorrento+Italy" target="_blank" rel="noopener">Gelateria Primavera</a></div>
+                <div class="extras-name">Gelateria Primavera</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Gelateria%20Primavera%20Sorrento" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1208,7 +1201,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Mama+Che+Pasta+Sorrento+Italy" target="_blank" rel="noopener">Mama Che Pasta</a></div>
+                <div class="extras-name">Mama Che Pasta</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Mama%20Che%20Pasta%20Sorrento" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1230,7 +1223,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Sfogliatelle+Attanasio+Naples+Italy" target="_blank" rel="noopener">Sfogliatelle Attanasio</a></div>
+                <div class="extras-name">Sfogliatelle Attanasio</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Sfogliatelle%20Attanasio%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1248,7 +1241,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Pizzeria+De+Figliole+Naples+Italy" target="_blank" rel="noopener">Pizzeria De' Figliole</a></div>
+                <div class="extras-name">Pizzeria De' Figliole</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Pizzeria%20De%20Figliole%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1266,7 +1259,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=L'Antica+Pizzeria+da+Michele+Naples+Italy" target="_blank" rel="noopener">L'Antica Pizzeria da Michele</a></div>
+                <div class="extras-name">L'Antica Pizzeria da Michele</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Antica%20Pizzeria%20Michele%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1284,7 +1277,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Sorbillo+Pizzeria+Naples+Italy" target="_blank" rel="noopener">Sorbillo</a></div>
+                <div class="extras-name">Sorbillo</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Sorbillo%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1302,7 +1295,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Chalet+Ciro+Naples+Italy" target="_blank" rel="noopener">Chalet Ciro</a></div>
+                <div class="extras-name">Chalet Ciro</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Chalet%20Ciro%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1320,7 +1313,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Mennella+Il+Gelato+Naples+Italy" target="_blank" rel="noopener">Mennella Il Gelato</a></div>
+                <div class="extras-name">Mennella Il Gelato</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Mennella%20Gelato%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1338,7 +1331,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=50+Kalo+Pizzeria+Naples+Italy" target="_blank" rel="noopener">50 Kalò</a></div>
+                <div class="extras-name">50 Kalò</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=50%20Kalo%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1370,7 +1363,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Colosseum+Rome+Italy" target="_blank" rel="noopener">Colosseum</a></div>
+                <div class="extras-name">Colosseum</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Colosseum%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1385,7 +1378,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Fontana+di+Trevi+Rome+Italy" target="_blank" rel="noopener">Fontana di Trevi</a></div>
+                <div class="extras-name">Fontana di Trevi</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Trevi%20Fountain%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1400,7 +1393,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Piazza+Trilussa+Rome+Italy" target="_blank" rel="noopener">Piazza Trilussa</a></div>
+                <div class="extras-name">Piazza Trilussa</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Piazza%20Trilussa%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1415,7 +1408,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Piazza+Navona+Rome+Italy" target="_blank" rel="noopener">Piazza Navona</a></div>
+                <div class="extras-name">Piazza Navona</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Piazza%20Navona%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1430,7 +1423,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Spanish+Steps+Rome+Italy" target="_blank" rel="noopener">Spanish Steps</a></div>
+                <div class="extras-name">Spanish Steps</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Spanish%20Steps%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1445,7 +1438,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Pantheon+Rome+Italy" target="_blank" rel="noopener">Pantheon</a></div>
+                <div class="extras-name">Pantheon</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Pantheon%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1460,7 +1453,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Vatican+St+Peters+Basilica+Rome+Italy" target="_blank" rel="noopener">Vatican / St. Peter's</a></div>
+                <div class="extras-name">Vatican / St. Peter's</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Vatican%20St%20Peters%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1475,7 +1468,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Terrazza+del+Pincio+Rome+Italy" target="_blank" rel="noopener">Terrazza del Pincio</a></div>
+                <div class="extras-name">Terrazza del Pincio</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Terrazza%20Pincio%20Rome" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1493,7 +1486,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Grotta+Azzurra+Blue+Grotto+Capri+Italy" target="_blank" rel="noopener">Blue Grotto (Grotta Azzurra)</a></div>
+                <div class="extras-name">Blue Grotto (Grotta Azzurra)</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Blue%20Grotto%20Capri" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1508,7 +1501,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Grotta+dello+Smeraldo+Emerald+Grotto+Amalfi+Italy" target="_blank" rel="noopener">Emerald Grotto (Grotta dello Smeraldo)</a></div>
+                <div class="extras-name">Emerald Grotto (Grotta dello Smeraldo)</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Emerald%20Grotto%20Amalfi" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1523,7 +1516,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Piazza+Tasso+Sorrento+Italy" target="_blank" rel="noopener">Piazza Tasso</a></div>
+                <div class="extras-name">Piazza Tasso</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Piazza%20Tasso%20Sorrento" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1538,7 +1531,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Marina+Grande+Sorrento+Italy" target="_blank" rel="noopener">Marina Grande</a></div>
+                <div class="extras-name">Marina Grande</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Marina%20Grande%20Sorrento" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1553,7 +1546,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Via+San+Cesareo+Sorrento+Italy" target="_blank" rel="noopener">Via San Cesareo</a></div>
+                <div class="extras-name">Via San Cesareo</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Via%20San%20Cesareo%20Sorrento" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1571,7 +1564,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Maradona+Murales+Quartieri+Spagnoli+Naples+Italy" target="_blank" rel="noopener">Maradona Murales</a></div>
+                <div class="extras-name">Maradona Murales</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Maradona%20graffiti%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1586,7 +1579,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Toledo+Metro+Station+Naples+Italy" target="_blank" rel="noopener">Toledo Metro Station</a></div>
+                <div class="extras-name">Toledo Metro Station</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Toledo%20Metro%20Station%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1601,7 +1594,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Spaccanapoli+Naples+Italy" target="_blank" rel="noopener">Spaccanapoli</a></div>
+                <div class="extras-name">Spaccanapoli</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Spaccanapoli%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1616,7 +1609,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Cappella+Sansevero+Naples+Italy" target="_blank" rel="noopener">Cappella Sansevero</a></div>
+                <div class="extras-name">Cappella Sansevero</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Cappella%20Sansevero%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1631,7 +1624,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Castel+dell+Ovo+Naples+Italy" target="_blank" rel="noopener">Castel dell'Ovo</a></div>
+                <div class="extras-name">Castel dell'Ovo</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Castel%20dell%20Ovo%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1646,7 +1639,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Vomero+Pedamentina+Naples+Italy" target="_blank" rel="noopener">Vomero & Pedamentina</a></div>
+                <div class="extras-name">Vomero & Pedamentina</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Pedamentina%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -1661,7 +1654,7 @@
 
         <div class="extras-item">
             <div class="extras-header">
-                <div class="extras-name"><a href="https://www.google.com/maps/search/?api=1&query=Galleria+Umberto+I+Naples+Italy" target="_blank" rel="noopener">Galleria Umberto I</a></div>
+                <div class="extras-name">Galleria Umberto I</div>
                 <div class="extras-actions">
                     <a href="snssdk1233://search?keyword=Galleria%20Umberto%20Naples" class="extras-btn" title="TikTok">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
